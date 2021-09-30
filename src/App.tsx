@@ -1,13 +1,34 @@
 import './App.css';
 
-import React from 'react';
-import logo from './logo.svg';
+import {
+  Link,
+  Route,
+  BrowserRouter as Router,
+  Switch
+} from "react-router-dom";
+
+import { AnswerForm } from './AnswerForm';
+import { AnswerList } from './AnswerList';
+import { Typography } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Router>
+      <>
+        <Typography>
+          <Link  to="/">
+            Question
+          </Link>
+          <Link  to="/answers">
+            Top Answers
+          </Link>
+        </Typography>
+      </>
+      <Switch>
+        <Route path="/" exact component={AnswerForm} />
+        <Route path="/answers" exact component={AnswerList} />
+      </Switch>
+    </Router>
   );
 }
 
