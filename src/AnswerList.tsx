@@ -16,7 +16,7 @@ export const AnswerList = () => {
 
   useEffect( () => {
     if (!listening) {
-      const events = new EventSource('http://localhost:4001/api/v1/answers');
+      const events = new EventSource('https://murmuring-coast-31015.herokuapp.com/api/v1/answers');
 
       events.onmessage = (event) => {
         const parsedData = JSON.parse(event.data);

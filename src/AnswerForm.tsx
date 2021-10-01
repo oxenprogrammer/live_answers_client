@@ -37,7 +37,7 @@ export const AnswerForm = () => {
     
     setIsLoading(true);
     try {
-      const response = await axios.post('http://127.0.0.1:4001/api/v1/answers', { content: answer });
+      const response = await axios.post('https://murmuring-coast-31015.herokuapp.com/api/v1/answers', { content: answer });
       console.log(response.status);
       if (response.status === 200) {
         setServerResponse('Successfully addded answer.');
