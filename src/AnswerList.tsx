@@ -34,13 +34,13 @@ export const AnswerList = () => {
     <List className={classes.root}>
       {
         answers.map((answer, index) => (
-          <React.Fragment>
-            <ListItem alignItems="flex-start">
+          <React.Fragment key={index}>
+            <ListItem  alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
               </ListItemAvatar>
-              <ListItemText key={index}
-                primary="Is hotdog a Sandwich? Why?"
+              <ListItemText 
+                primary="Anonymous"
                 secondary={
                   <React.Fragment>
                     <Typography
@@ -49,9 +49,9 @@ export const AnswerList = () => {
                       className={classes.inline}
                       color="textPrimary"
                     >
-                      Anonymous —
+                      Says —
                     </Typography>
-                    — { answer.content }
+                     — { answer.content }
                   </React.Fragment>
                 }
               />
