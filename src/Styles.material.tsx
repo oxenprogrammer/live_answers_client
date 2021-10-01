@@ -27,5 +27,6 @@ export const useStyles = makeStyles(() => ({
   error: {
     padding: "1rem",
     color: "#D05D26",
+    textTransform: "capitalize",
   }
 }));

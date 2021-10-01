@@ -1,5 +1,5 @@
 import { Button, TextareaAutosize, Typography } from "@material-ui/core";
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import axios from 'axios';
 import { useStyles } from './Styles.material';
@@ -36,13 +36,16 @@ export const AnswerForm = () => {
     }
     
     setIsLoading(true);
-    // const data = { content: answer };
-    const response = await axios.post('http://127.0.0.1:4001/api/v1/answers', { content: answer });
-    console.log(response.status);
-    if (response.status !== 200) {
-      setError('An error occurred submitting to the server');
-    } else {
-      setServerResponse('Successfully addded answer.');
+    try {
+      const response = await axios.post('http://127.0.0.1:4001/api/v1/answers', { content: answer });
+      console.log(response.status);
+      if (response.status === 200) {
+        setServerResponse('Successfully addded answer.');
+      }
+    } catch (err: any) {
+      if (err.response.status === 400) {
+        setError(`${err.response.data.message}`);
+      }
     }
     
     setIsLoading(false);
