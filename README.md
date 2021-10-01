@@ -19,6 +19,8 @@ It allows users to answer a question and updates the list of answers in real tim
 - `cd` to the root of the project.
 - run `yarn` to install the dependencies.
 - run `yarn start` to start the local server on port `3000`.
+
+NB: You may need to change the server url to localhost incase of `cors` in both the AnswerForm and AnswerList components.
 ### Tests
 - run `yarn test`
 
@@ -30,3 +32,5 @@ It allows users to answer a question and updates the list of answers in real tim
 
 **Author**
 - Emanuel Okello
+
+## Live Demo: Currently not working because of unknown `cors` issues from heroku https://gifted-lewin-a86f2b.netlify.app/
