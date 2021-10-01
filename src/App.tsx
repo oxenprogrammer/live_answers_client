@@ -1,25 +1,43 @@
-import './App.css';
-
 import {
   Link,
   Route,
   BrowserRouter as Router,
   Switch
 } from "react-router-dom";
+import { Typography, makeStyles } from "@material-ui/core";
 
 import { AnswerForm } from './AnswerForm';
 import { AnswerList } from './AnswerList';
-import { Typography } from "@material-ui/core";
+
+const useStyles = makeStyles(() => ({
+  root: {
+    display: "flex",
+    backgroundColor: "#0889C6",
+    justifyContent: "center",
+  },
+  link: {
+    padding: "0.6rem",
+    textDecoration: "none",
+    fontSize: "1.4rem",
+    color: "#ffffff",
+    fontWeight: "bold",
+    "&:hover": {
+      color: "#fff34d",
+      fontSize: "1.42rem",
+    }
+  }
+}))
 
 function App() {
+  const classes = useStyles();
   return (
     <Router>
       <>
-        <Typography>
-          <Link  to="/">
+        <Typography className={classes.root}>
+          <Link className={classes.link}  to="/">
             Question
           </Link>
-          <Link  to="/answers">
+          <Link className={classes.link}  to="/answers">
             Top Answers
           </Link>
         </Typography>
