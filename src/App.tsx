@@ -9,7 +9,7 @@ import {
 
 import { AnswerForm } from './AnswerForm';
 import { AnswerList } from './AnswerList';
-import { Typography } from '@mui/material';
+import { Typography } from "@material-ui/core";
 
 function App() {
   return (
