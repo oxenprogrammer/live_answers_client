@@ -53,12 +53,14 @@ export const AnswerForm = () => {
       >
         <div>
           <textarea
+            data-testid="answer-input"
+            placeholder="answer"
             onChange={handleChange}
             value={answer}
           ></textarea>
         </div>
         <div>
-          <input type="submit" disabled={isLoading} value="Add Answer" />
+          <button type="submit" disabled={isLoading}>Add Answer</button>
         </div>
       </form>
   </React.Fragment>
