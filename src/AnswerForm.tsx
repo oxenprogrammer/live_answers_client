@@ -1,12 +1,15 @@
+import { Button, TextareaAutosize, Typography } from "@material-ui/core";
 import React, { ChangeEvent, useState } from 'react';
 
 import axios from 'axios';
+import { useStyles } from './Styles.material';
 
 export const AnswerForm = () => {
 
   const [answer, setAnswer] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [serverResponse, setServerResponse] = useState<string>('');
+  const [error, setError] = useState<string>('');
 
   const notAllowed = [
     'yes',
@@ -28,16 +31,16 @@ export const AnswerForm = () => {
     e.preventDefault();
     
     if (sterilizedAnswer === '' || notAllowed.includes(sterilizedAnswer) || sterilizedAnswer.length < 10) {
-      setServerResponse('Your answer contains unallowed response');
+      setError('Your answer contains unallowed response');
       return;
     }
     
     setIsLoading(true);
-    const data = { content: answer };
-    const response = await axios.post('http://127.0.0.1:4001/api/v1/answers', data);
+    // const data = { content: answer };
+    const response = await axios.post('http://127.0.0.1:4001/api/v1/answers', { content: answer });
     console.log(response.status);
     if (response.status !== 200) {
-      setServerResponse('An error occurred submitting to the server');
+      setError('An error occurred submitting to the server');
     } else {
       setServerResponse('Successfully addded answer.');
     }
@@ -45,24 +48,32 @@ export const AnswerForm = () => {
     setIsLoading(false);
   };
   
+  const classes = useStyles();
+
   return (
-  <React.Fragment>
-    <h2>Is a hot dog a sandwich? Why?</h2>
-    {serverResponse ? <div>{ serverResponse }</div> : ''}
+  <div className={classes.root}>
+    <Typography className={classes.question}>Is a hot dog a sandwich? Why?</Typography>
+    {serverResponse ? 
+                    <div className={classes.response}>{ serverResponse }</div>
+                    : error ?
+                            <div className={classes.error}>{ error }</div>
+                            : ''
+    }
     <form onSubmit={handleSubmit}
       >
         <div>
-          <textarea
+          <TextareaAutosize
             data-testid="answer-input"
-            placeholder="answer"
+            placeholder="Type your response ..."
             onChange={handleChange}
             value={answer}
-          ></textarea>
+            minRows={5}
+          ></TextareaAutosize>
         </div>
         <div>
-          <button type="submit" disabled={isLoading}>Add Answer</button>
+          <Button className={classes.button} variant="contained" type="submit" disabled={isLoading}>Add Answer</Button>
         </div>
       </form>
-  </React.Fragment>
+  </div>
   )
 }
