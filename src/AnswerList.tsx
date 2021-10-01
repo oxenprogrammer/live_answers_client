@@ -1,4 +1,7 @@
+import { Avatar, Divider, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@material-ui/core";
 import React, { useEffect, useState } from 'react';
+
+import { useStyles } from "./List.material";
 
 export const AnswerList = () => {
   interface IAnswer {
@@ -25,14 +28,38 @@ export const AnswerList = () => {
     }
   }, [listening, answers]);
 
+ const classes = useStyles();
+  
   return (
-     <div>
-       {
-         answers.map((answer, index) => (
-          <div key={index}>{ answer.content }</div>
-         )
-         )
-       }
-     </div>
+    <List className={classes.root}>
+      {
+        answers.map((answer, index) => (
+          <React.Fragment>
+            <ListItem alignItems="flex-start">
+              <ListItemAvatar>
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+              </ListItemAvatar>
+              <ListItemText key={index}
+                primary="Is hotdog a Sandwich? Why?"
+                secondary={
+                  <React.Fragment>
+                    <Typography
+                      component="span"
+                      variant="body2"
+                      className={classes.inline}
+                      color="textPrimary"
+                    >
+                      Anonymous —
+                    </Typography>
+                    — { answer.content }
+                  </React.Fragment>
+                }
+              />
+            </ListItem>
+            <Divider variant="inset" component="li" />
+          </React.Fragment>
+        ))
+      }
+    </List>
   );
 }
