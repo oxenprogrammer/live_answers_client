@@ -20,7 +20,7 @@ It allows users to answer a question and updates the list of answers in real tim
 - run `yarn` to install the dependencies.
 - run `yarn start` to start the local server on port `3000`.
 
-NB: You may need to change the server url to localhost incase of `cors` in both the AnswerForm and AnswerList components.
+NB: You may need to change the server url to localhost incase of `cors` in both the AnswerForm and AnswerList components. `127.0.0.1:4001/api/v1/answers`
 ### Tests
 - run `yarn test`
 
