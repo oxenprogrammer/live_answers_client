@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 It allows users to answer a question and updates the list of answers in real time.
 
 ## LIVE DEMO
-Click [https://gifted-lewin-a86f2b.netlify.app/answers](https://gifted-lewin-a86f2b.netlify.app/answers)
+Click [https://gifted-lewin-a86f2b.netlify.app](https://gifted-lewin-a86f2b.netlify.app)
 
 ## Main technology used
 - ReactJs
