@@ -35,5 +35,3 @@ NB: You may need to change the server url to localhost incase of `cors` in both 
 
 **Author**
 - Emanuel Okello
-
-## Live Demo: Currently not working because of unknown `cors` issues from heroku https://gifted-lewin-a86f2b.netlify.app/
