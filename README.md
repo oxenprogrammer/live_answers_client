@@ -23,7 +23,7 @@ Click [https://gifted-lewin-a86f2b.netlify.app](https://gifted-lewin-a86f2b.netl
 - run `yarn` to install the dependencies.
 - run `yarn start` to start the local server on port `3000`.
 
-NB: You may need to change the server url to localhost incase of `cors` in both the AnswerForm and AnswerList components. `127.0.0.1:4001/api/v1/answers`
+NB: You may need to change the server url to localhost in both the AnswerForm and AnswerList components. `127.0.0.1:4001/api/v1/answers` to use your local server of the backend.
 ### Tests
 - run `yarn test`
 
