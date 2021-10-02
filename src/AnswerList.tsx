@@ -1,7 +1,10 @@
 import { Avatar, Divider, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@material-ui/core";
 import React, { useEffect, useState } from 'react';
 
+import dateformat from 'dateformat';
 import { useStyles } from "./List.material";
+
+;
 
 export const AnswerList = () => {
   interface IAnswer {
@@ -49,7 +52,7 @@ export const AnswerList = () => {
                       className={classes.inline}
                       color="textPrimary"
                     >
-                      Says —
+                      { dateformat(answer.createdAt) } —
                     </Typography>
                      — { answer.content }
                   </React.Fragment>
