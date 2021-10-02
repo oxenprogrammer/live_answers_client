@@ -3,6 +3,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 It allows users to answer a question and updates the list of answers in real time.
 
+## LIVE DEMO
+Click [https://gifted-lewin-a86f2b.netlify.app/answers](https://gifted-lewin-a86f2b.netlify.app/answers)
+
 ## Main technology used
 - ReactJs
 - TypeScript
