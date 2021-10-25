@@ -6,6 +6,9 @@ It allows users to answer a question and updates the list of answers in real tim
 ## LIVE DEMO
 Click [https://gifted-lewin-a86f2b.netlify.app](https://gifted-lewin-a86f2b.netlify.app)
 
+## Backend Link
+Click [Backend NodeJs Repo](https://github.com/oxenprogrammer/live_answers)
+
 ## Main technology used
 - ReactJs
 - TypeScript
